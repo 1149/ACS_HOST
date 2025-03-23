@@ -4,6 +4,7 @@
   "description": "--- page_type: sample languages: - javascript - nodejs - products: - azure - azure-communication-services ---",
   "scripts": {
     "setup": "cd Server && npm install && cd ../Calling && npm install && cd ..",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd Calling && npm run start && cd ..",
     "build": "cd Server && npm run build && cd ../Calling && npm run build && cd ..",
     "package": "cd Calling && npm run package && cd .."
