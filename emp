@@ -1,0 +1,42 @@
+import React, { useState } from "react";
+
+
+interface EmployeeTableProps {
+    employees: Employee[];
+    handleCall: (name: string) => void;
+}
+interface Employee {
+    id: number;
+    name: string;
+    department: string;
+}
+
+
+
+const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees, handleCall }) => {
+    return (
+        <table border={1} style={{ width: "100%", textAlign: "left" }}>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {employees.map((employee) => (
+                    <tr key={employee.id}>
+                        <td>{employee.id}</td>
+                        <td>{employee.name}</td>
+                        <td>{employee.department}</td>
+                        <td>
+                            <button onClick={() => handleCall(employee.name)}>Call</button>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    );
+};
+export default EmployeeTable;
